@@ -5,6 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
+
 const Index = () => {
   const [currentSection, setCurrentSection] = useState('home');
   const [formData, setFormData] = useState({
@@ -12,6 +14,12 @@ const Index = () => {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init('A-eRT-JSj2tOVXynf');
+  }, []);
 
   // Scroll spy effect
   useEffect(() => {
@@ -50,18 +58,44 @@ const Index = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
+  // Handle form submission with EmailJS
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Thank you for contacting me!",
-      description: "I'll get back to you as soon as possible."
-    });
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+
+    try {
+      const result = await emailjs.send(
+        'service_ubhz4h',
+        'template_8w1hfsn',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Shivam Singh Yadav',
+        }
+      );
+
+      console.log('Email sent successfully:', result);
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for contacting me. I'll get back to you soon."
+      });
+      
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly via email.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Handle input change
@@ -81,6 +115,7 @@ const Index = () => {
       });
     }
   };
+
   const skills = {
     frontend: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
     backend: ['Spring Boot', 'Spring MVC', 'Spring Data JPA', 'Spring Security'],
@@ -88,6 +123,7 @@ const Index = () => {
     testing: ['JUnit', 'Mockito'],
     platforms: ['Eclipse', 'IntelliJ IDEA', 'VS Code']
   };
+
   const projects = [{
     title: 'Bus Ticket Booking System',
     description: 'Web-based ticket booking with route search, JWT authentication, and seat selection',
@@ -109,6 +145,7 @@ const Index = () => {
     technologies: ['Blender Platform'],
     icon: '🚢'
   }];
+
   return <div className="min-h-screen bg-background text-foreground">
       {/* Animated Particles Background */}
       <div className="particles">
@@ -347,16 +384,45 @@ const Index = () => {
                 <CardContent className="p-6">
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                      <Input name="name" placeholder="Your Name" value={formData.name} onChange={handleInputChange} className="bg-transparent border-b-2 border-t-0 border-l-0 border-r-0 border-muted focus:border-primary rounded-none px-0" required />
+                      <Input 
+                        name="name" 
+                        placeholder="Your Name" 
+                        value={formData.name} 
+                        onChange={handleInputChange} 
+                        className="bg-transparent border-b-2 border-t-0 border-l-0 border-r-0 border-muted focus:border-primary rounded-none px-0" 
+                        required 
+                        disabled={isSubmitting}
+                      />
                     </div>
                     <div>
-                      <Input name="email" type="email" placeholder="Your Email" value={formData.email} onChange={handleInputChange} className="bg-transparent border-b-2 border-t-0 border-l-0 border-r-0 border-muted focus:border-primary rounded-none px-0" required />
+                      <Input 
+                        name="email" 
+                        type="email" 
+                        placeholder="Your Email" 
+                        value={formData.email} 
+                        onChange={handleInputChange} 
+                        className="bg-transparent border-b-2 border-t-0 border-l-0 border-r-0 border-muted focus:border-primary rounded-none px-0" 
+                        required 
+                        disabled={isSubmitting}
+                      />
                     </div>
                     <div>
-                      <Textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleInputChange} className="bg-transparent border-2 border-muted focus:border-primary min-h-32" required />
+                      <Textarea 
+                        name="message" 
+                        placeholder="Your Message" 
+                        value={formData.message} 
+                        onChange={handleInputChange} 
+                        className="bg-transparent border-2 border-muted focus:border-primary min-h-32" 
+                        required 
+                        disabled={isSubmitting}
+                      />
                     </div>
-                    <Button type="submit" className="btn-gradient w-full py-3 rounded-full">
-                      Send Message
+                    <Button 
+                      type="submit" 
+                      className="btn-gradient w-full py-3 rounded-full" 
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
                     </Button>
                   </form>
                 </CardContent>
@@ -385,4 +451,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
