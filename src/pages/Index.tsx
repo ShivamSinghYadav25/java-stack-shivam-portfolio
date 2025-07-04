@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, Download, ExternalLink, User, Code, Briefcase, Award, FolderOpen, MessageCircle } from 'lucide-react';
+import { Github, Linkedin, Mail, Download, ExternalLink, User, Code, Briefcase, Award, FolderOpen, MessageCircle, Upload } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -15,6 +15,7 @@ const Index = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [resumeFile, setResumeFile] = useState<File | null>(null);
 
   // Initialize EmailJS
   useEffect(() => {
@@ -57,6 +58,44 @@ const Index = () => {
     }, 100);
     return () => clearInterval(timer);
   }, []);
+
+  // Handle resume file upload
+  const handleResumeUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file && file.type === 'application/pdf') {
+      setResumeFile(file);
+      toast({
+        title: "Resume uploaded successfully!",
+        description: "Your resume is now ready for download."
+      });
+    } else {
+      toast({
+        title: "Invalid file type",
+        description: "Please upload a PDF file.",
+        variant: "destructive"
+      });
+    }
+  };
+
+  // Handle resume download
+  const handleResumeDownload = () => {
+    if (resumeFile) {
+      const url = URL.createObjectURL(resumeFile);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = resumeFile.name;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } else {
+      toast({
+        title: "No resume available",
+        description: "Please upload your resume first.",
+        variant: "destructive"
+      });
+    }
+  };
 
   // Handle form submission with EmailJS
   const handleSubmit = async (e: React.FormEvent) => {
@@ -238,10 +277,38 @@ const Index = () => {
                   I thrive on collaborative development and continuously learning new technologies to solve complex 
                   problems and deliver exceptional software.
                 </p>
-                <Button className="btn-gradient inline-flex items-center space-x-2 px-6 py-3 rounded-full">
-                  <Download size={20} />
-                  <span>Download Resume</span>
-                </Button>
+                <div className="space-y-4">
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button 
+                      onClick={handleResumeDownload}
+                      className="btn-gradient inline-flex items-center space-x-2 px-6 py-3 rounded-full"
+                    >
+                      <Download size={20} />
+                      <span>Download Resume</span>
+                    </Button>
+                    <div className="relative">
+                      <input
+                        type="file"
+                        accept=".pdf"
+                        onChange={handleResumeUpload}
+                        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                        id="resume-upload"
+                      />
+                      <Button 
+                        variant="outline" 
+                        className="inline-flex items-center space-x-2 px-6 py-3 rounded-full border-primary/30 hover:border-primary w-full"
+                      >
+                        <Upload size={20} />
+                        <span>{resumeFile ? 'Change Resume' : 'Upload Resume'}</span>
+                      </Button>
+                    </div>
+                  </div>
+                  {resumeFile && (
+                    <p className="text-sm text-primary">
+                      ✓ Resume uploaded: {resumeFile.name}
+                    </p>
+                  )}
+                </div>
               </div>
               <div className="animate-slide-in-right">
                 <Card className="bg-card border-border">
