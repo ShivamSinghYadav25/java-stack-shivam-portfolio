@@ -167,7 +167,7 @@ const Index = () => {
         <div className="container mx-auto px-6 text-center">
           <div className="animate-fade-in">
             <div className="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-4 border-primary/30 animate-float">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Shivam Singh Yadav" className="w-full h-full object-cover" />
+              <img alt="Shivam Singh Yadav" className="w-full h-full object-cover" src="/lovable-uploads/e187ba3c-fbc3-47f6-9c29-b3c1a84053fc.jpg" />
             </div>
             <h1 className="text-5xl font-bold mb-6 md:text-5xl">
               Hi, I'm <span className="text-gradient text-5xl">Shivam Singh Yadav</span>
