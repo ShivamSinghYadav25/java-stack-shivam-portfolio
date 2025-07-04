@@ -8,31 +8,31 @@ const SkillsSection = () => {
       title: 'Frontend',
       icon: '🎨',
       skills: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-teal-500 to-blue-500'
     },
     backend: {
       title: 'Backend',
       icon: '⚙️',
       skills: ['Spring Boot', 'Spring MVC', 'Spring Data JPA', 'Spring Security'],
-      color: 'from-cyan-500 to-teal-500'
+      color: 'from-blue-500 to-cyan-500'
     },
     databases: {
       title: 'Databases',
       icon: '🗄️',
       skills: ['MySQL', 'MongoDB', 'PostgreSQL'],
-      color: 'from-teal-500 to-blue-500'
+      color: 'from-cyan-500 to-teal-500'
     },
     testing: {
       title: 'Testing',
       icon: '🧪',
       skills: ['JUnit', 'Mockito'],
-      color: 'from-blue-500 to-indigo-500'
+      color: 'from-teal-600 to-blue-600'
     },
     platforms: {
       title: 'Platforms/IDEs',
       icon: '💻',
       skills: ['Eclipse', 'IntelliJ IDEA', 'VS Code'],
-      color: 'from-indigo-500 to-blue-500'
+      color: 'from-blue-600 to-teal-600'
     }
   };
 
@@ -58,7 +58,7 @@ const SkillsSection = () => {
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${color} p-4 mb-4 flex items-center justify-center text-2xl shadow-lg`}>
                     {icon}
                   </div>
-                  <CardTitle className="text-2xl font-bold text-blue-300 group-hover:text-blue-200 transition-colors">
+                  <CardTitle className="text-2xl font-bold text-teal-300 group-hover:text-teal-200 transition-colors">
                     {title}
                   </CardTitle>
                 </CardHeader>

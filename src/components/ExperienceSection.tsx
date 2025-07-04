@@ -19,15 +19,15 @@ const ExperienceSection = () => {
             <CardHeader className="pb-6">
               <div className="flex items-start justify-between flex-wrap gap-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 p-4 flex items-center justify-center shadow-lg">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-teal-500 to-blue-500 p-4 flex items-center justify-center shadow-lg">
                     <Briefcase className="text-white" size={24} />
                   </div>
                   <div>
-                    <CardTitle className="text-2xl font-bold text-blue-300 mb-2">Java Stack Developer Intern</CardTitle>
+                    <CardTitle className="text-2xl font-bold text-teal-300 mb-2">Java Stack Developer Intern</CardTitle>
                     <CardDescription className="text-xl text-slate-300 font-medium">GUVI Geek Technology</CardDescription>
                   </div>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full border border-blue-500/30">
+                <div className="flex items-center gap-2 px-4 py-2 bg-teal-500/20 text-teal-300 rounded-full border border-teal-500/30">
                   <Calendar size={16} />
                   <span className="font-medium">December 2024 – June 2025</span>
                 </div>

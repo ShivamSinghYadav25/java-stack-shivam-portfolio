@@ -58,7 +58,7 @@ const AboutSection = ({ handleResumeDownload, handleResumeUpload, resumeFile }: 
                   />
                   <Button 
                     variant="outline" 
-                    className="inline-flex items-center space-x-3 px-8 py-4 rounded-full text-lg border-2 border-blue-400/50 text-blue-300 hover:border-blue-400 hover:bg-blue-400/10 backdrop-blur-sm w-full"
+                    className="inline-flex items-center space-x-3 px-8 py-4 rounded-full text-lg border-2 border-teal-400/50 text-teal-300 hover:border-teal-400 hover:bg-teal-400/10 backdrop-blur-sm w-full"
                   >
                     <Upload size={20} />
                     <span>{resumeFile ? 'Change Resume' : 'Upload Resume'}</span>
@@ -77,42 +77,42 @@ const AboutSection = ({ handleResumeDownload, handleResumeUpload, resumeFile }: 
             <div className="animate-slide-right">
               <Card className="card-modern">
                 <CardHeader className="pb-6">
-                  <CardTitle className="text-2xl font-bold text-blue-300 flex items-center gap-3">
-                    <GraduationCap className="text-3xl text-blue-400" />
+                  <CardTitle className="text-2xl font-bold text-teal-300 flex items-center gap-3">
+                    <GraduationCap className="text-3xl text-teal-400" />
                     Education Journey
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-8">
                   <div className="relative pl-8">
-                    <div className="absolute left-0 top-3 w-4 h-4 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full shadow-lg"></div>
-                    <div className="absolute left-2 top-7 w-0.5 h-full bg-gradient-to-b from-blue-400/50 to-transparent"></div>
+                    <div className="absolute left-0 top-3 w-4 h-4 bg-gradient-to-r from-teal-400 to-blue-400 rounded-full shadow-lg"></div>
+                    <div className="absolute left-2 top-7 w-0.5 h-full bg-gradient-to-b from-teal-400/50 to-transparent"></div>
                     <div className="bg-slate-700/50 p-6 rounded-xl backdrop-blur-sm border border-slate-600/50">
                       <h4 className="font-bold text-lg text-slate-100 mb-2">Bachelor of Technology</h4>
                       <p className="text-slate-300 mb-2">B.K. Birla Institute of Engineering and Technology</p>
-                      <span className="inline-block px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium">
+                      <span className="inline-block px-3 py-1 bg-teal-500/20 text-teal-300 rounded-full text-sm font-medium">
                         Graduation: 2025
                       </span>
                     </div>
                   </div>
 
                   <div className="relative pl-8">
-                    <div className="absolute left-0 top-3 w-4 h-4 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-full shadow-lg"></div>
-                    <div className="absolute left-2 top-7 w-0.5 h-full bg-gradient-to-b from-cyan-400/50 to-transparent"></div>
+                    <div className="absolute left-0 top-3 w-4 h-4 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full shadow-lg"></div>
+                    <div className="absolute left-2 top-7 w-0.5 h-full bg-gradient-to-b from-blue-400/50 to-transparent"></div>
                     <div className="bg-slate-700/50 p-6 rounded-xl backdrop-blur-sm border border-slate-600/50">
                       <h4 className="font-bold text-lg text-slate-100 mb-2">Intermediate</h4>
                       <p className="text-slate-300 mb-2">St. Joseph's School</p>
-                      <span className="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm font-medium">
+                      <span className="inline-block px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium">
                         June 2021
                       </span>
                     </div>
                   </div>
 
                   <div className="relative pl-8">
-                    <div className="absolute left-0 top-3 w-4 h-4 bg-gradient-to-r from-teal-400 to-blue-400 rounded-full shadow-lg"></div>
+                    <div className="absolute left-0 top-3 w-4 h-4 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-full shadow-lg"></div>
                     <div className="bg-slate-700/50 p-6 rounded-xl backdrop-blur-sm border border-slate-600/50">
                       <h4 className="font-bold text-lg text-slate-100 mb-2">High School</h4>
                       <p className="text-slate-300 mb-2">St. Joseph's School</p>
-                      <span className="inline-block px-3 py-1 bg-teal-500/20 text-teal-300 rounded-full text-sm font-medium">
+                      <span className="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm font-medium">
                         July 2019
                       </span>
                     </div>

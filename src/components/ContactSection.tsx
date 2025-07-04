@@ -31,10 +31,10 @@ const ContactSection = ({ formData, isSubmitting, handleSubmit, handleInputChang
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16">
           <div className="animate-slide-left space-y-8">
             <div className="glass-effect p-8">
-              <h3 className="text-3xl font-bold text-blue-300 mb-8">Get In Touch</h3>
+              <h3 className="text-3xl font-bold text-teal-300 mb-8">Get In Touch</h3>
               <div className="space-y-6">
                 <div className="flex items-center space-x-4 p-4 bg-slate-700/30 rounded-xl backdrop-blur-sm border border-slate-600/50">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-teal-500 to-blue-500 flex items-center justify-center">
                     <Mail className="text-white" size={20} />
                   </div>
                   <div>
@@ -44,7 +44,7 @@ const ContactSection = ({ formData, isSubmitting, handleSubmit, handleInputChang
                 </div>
                 
                 <div className="flex items-center space-x-4 p-4 bg-slate-700/30 rounded-xl backdrop-blur-sm border border-slate-600/50">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-cyan-500 to-teal-500 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center">
                     <Phone className="text-white" size={20} />
                   </div>
                   <div>
@@ -59,7 +59,7 @@ const ContactSection = ({ formData, isSubmitting, handleSubmit, handleInputChang
               <Button 
                 variant="outline" 
                 size="lg"
-                className="flex-1 rounded-full border-2 border-blue-400/50 text-blue-300 hover:border-blue-400 hover:bg-blue-400/10 backdrop-blur-sm"
+                className="flex-1 rounded-full border-2 border-teal-400/50 text-teal-300 hover:border-teal-400 hover:bg-teal-400/10 backdrop-blur-sm"
                 onClick={() => window.open('https://github.com/ShivamSinghYadav25', '_blank')}
               >
                 <Github size={20} className="mr-2" />
@@ -68,7 +68,7 @@ const ContactSection = ({ formData, isSubmitting, handleSubmit, handleInputChang
               <Button 
                 variant="outline" 
                 size="lg"
-                className="flex-1 rounded-full border-2 border-blue-400/50 text-blue-300 hover:border-blue-400 hover:bg-blue-400/10 backdrop-blur-sm"
+                className="flex-1 rounded-full border-2 border-teal-400/50 text-teal-300 hover:border-teal-400 hover:bg-teal-400/10 backdrop-blur-sm"
                 onClick={() => window.open('https://www.linkedin.com/in/shivam-singh-yadav-9b09b631b', '_blank')}
               >
                 <Linkedin size={20} className="mr-2" />
@@ -88,7 +88,7 @@ const ContactSection = ({ formData, isSubmitting, handleSubmit, handleInputChang
                       placeholder="Your full name" 
                       value={formData.name} 
                       onChange={handleInputChange} 
-                      className="bg-slate-700/50 border-slate-600 focus:border-blue-400 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-400 backdrop-blur-sm" 
+                      className="bg-slate-700/50 border-slate-600 focus:border-teal-400 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-400 backdrop-blur-sm" 
                       required 
                       disabled={isSubmitting}
                     />
@@ -102,7 +102,7 @@ const ContactSection = ({ formData, isSubmitting, handleSubmit, handleInputChang
                       placeholder="your.email@example.com" 
                       value={formData.email} 
                       onChange={handleInputChange} 
-                      className="bg-slate-700/50 border-slate-600 focus:border-blue-400 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-400 backdrop-blur-sm" 
+                      className="bg-slate-700/50 border-slate-600 focus:border-teal-400 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-400 backdrop-blur-sm" 
                       required 
                       disabled={isSubmitting}
                     />
@@ -115,7 +115,7 @@ const ContactSection = ({ formData, isSubmitting, handleSubmit, handleInputChang
                       placeholder="Tell me about your project or idea..." 
                       value={formData.message} 
                       onChange={handleInputChange} 
-                      className="bg-slate-700/50 border-slate-600 focus:border-blue-400 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-400 backdrop-blur-sm min-h-32 resize-none" 
+                      className="bg-slate-700/50 border-slate-600 focus:border-teal-400 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-400 backdrop-blur-sm min-h-32 resize-none" 
                       required 
                       disabled={isSubmitting}
                     />
