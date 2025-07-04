@@ -3,47 +3,47 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Dark theme portfolio colors */
+/* Purple theme portfolio colors */
 @layer base {
   :root {
-    --background: 217 19% 8%;
-    --foreground: 210 40% 98%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
-    --card: 217 19% 12%;
-    --card-foreground: 210 40% 98%;
+    --card: 240 10% 8%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 217 19% 12%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 240 10% 8%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 189 94% 43%;
-    --primary-foreground: 217 19% 8%;
+    --primary: 263 70% 50%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 217 19% 15%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 240 4.8% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217 19% 15%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 240 4.8% 15%;
+    --muted-foreground: 240 5% 64.9%;
 
-    --accent: 185 57% 50%;
-    --accent-foreground: 217 19% 8%;
+    --accent: 280 65% 60%;
+    --accent-foreground: 240 10% 3.9%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217 19% 15%;
-    --input: 217 19% 15%;
-    --ring: 189 94% 43%;
+    --border: 240 4.8% 15%;
+    --input: 240 4.8% 15%;
+    --ring: 263 70% 50%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 217 19% 8%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 189 94% 43%;
-    --sidebar-primary-foreground: 217 19% 8%;
-    --sidebar-accent: 217 19% 15%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 217 19% 15%;
-    --sidebar-ring: 189 94% 43%;
+    --sidebar-background: 240 10% 3.9%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 263 70% 50%;
+    --sidebar-primary-foreground: 240 10% 3.9%;
+    --sidebar-accent: 240 4.8% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 4.8% 15%;
+    --sidebar-ring: 263 70% 50%;
   }
 }
 
@@ -63,15 +63,15 @@
 
 @layer components {
   .text-gradient {
-    @apply bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-purple-400 via-violet-500 to-indigo-500 bg-clip-text text-transparent;
   }
   
   .btn-gradient {
-    @apply bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600;
+    @apply bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700;
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/20;
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20;
   }
   
   .floating-input {
@@ -88,7 +88,7 @@
   }
 }
 
-/* Particle animation */
+/* Particle animation with purple theme */
 .particles {
   position: fixed;
   top: 0;
@@ -103,7 +103,7 @@
   position: absolute;
   width: 2px;
   height: 2px;
-  background: rgba(34, 211, 238, 0.3);
+  background: rgba(147, 51, 234, 0.4);
   border-radius: 50%;
   animation: float 6s ease-in-out infinite;
 }
@@ -111,14 +111,16 @@
 .particle:nth-child(odd) {
   animation-delay: -2s;
   animation-duration: 8s;
+  background: rgba(139, 92, 246, 0.3);
 }
 
 .particle:nth-child(even) {
   animation-delay: -4s;
   animation-duration: 10s;
+  background: rgba(168, 85, 247, 0.4);
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar with purple theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -134,4 +136,9 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--accent));
+}
+
+/* Additional gradient backgrounds */
+.section-gradient {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
 }

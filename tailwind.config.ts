@@ -66,15 +66,22 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				cyan: {
-					400: '#22d3ee',
-					500: '#06b6d4',
-					600: '#0891b2',
+				purple: {
+					400: '#a855f7',
+					500: '#9333ea',
+					600: '#7c3aed',
+					700: '#6d28d9',
 				},
-				teal: {
-					400: '#2dd4bf',
-					500: '#14b8a6',
-					600: '#0d9488',
+				violet: {
+					400: '#a78bfa',
+					500: '#8b5cf6',
+					600: '#7c3aed',
+					700: '#6d28d9',
+				},
+				indigo: {
+					400: '#818cf8',
+					500: '#6366f1',
+					600: '#4f46e5',
 				}
 			},
 			borderRadius: {
@@ -152,6 +159,14 @@ export default {
 					'51%, 100%': {
 						opacity: '0'
 					}
+				},
+				'pulse-glow': {
+					'0%, 100%': {
+						boxShadow: '0 0 5px rgba(147, 51, 234, 0.5)'
+					},
+					'50%': {
+						boxShadow: '0 0 20px rgba(147, 51, 234, 0.8)'
+					}
 				}
 			},
 			animation: {
@@ -162,7 +177,8 @@ export default {
 				'slide-in-right': 'slide-in-right 0.6s ease-out',
 				'float': 'float 3s ease-in-out infinite',
 				'typing': 'typing 3.5s steps(30, end), blink 0.75s step-end infinite',
-				'blink': 'blink 0.75s step-end infinite'
+				'blink': 'blink 0.75s step-end infinite',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite'
 			}
 		}
 	},
