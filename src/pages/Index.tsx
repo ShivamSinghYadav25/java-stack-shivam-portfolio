@@ -19,7 +19,6 @@ const Index = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [resumeFile, setResumeFile] = useState<File | null>(null);
 
   // Initialize EmailJS
   useEffect(() => {
@@ -63,42 +62,21 @@ const Index = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Handle resume file upload
-  const handleResumeUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file && file.type === 'application/pdf') {
-      setResumeFile(file);
-      toast({
-        title: "Resume uploaded successfully!",
-        description: "Your resume is now ready for download."
-      });
-    } else {
-      toast({
-        title: "Invalid file type",
-        description: "Please upload a PDF file.",
-        variant: "destructive"
-      });
-    }
-  };
-
-  // Handle resume download
+  // Handle resume download with direct path
   const handleResumeDownload = () => {
-    if (resumeFile) {
-      const url = URL.createObjectURL(resumeFile);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = resumeFile.name;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    } else {
-      toast({
-        title: "No resume available",
-        description: "Please upload your resume first.",
-        variant: "destructive"
-      });
-    }
+    // Replace this path with your actual resume path
+    const resumePath = '/path/to/your/resume.pdf';
+    const link = document.createElement('a');
+    link.href = resumePath;
+    link.download = 'Shivam_Singh_Yadav_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    toast({
+      title: "Resume downloaded!",
+      description: "Thank you for downloading my resume."
+    });
   };
 
   // Handle form submission with EmailJS
@@ -180,11 +158,7 @@ const Index = () => {
       
       <HeroSection typedText={typedText} scrollToSection={scrollToSection} />
       
-      <AboutSection 
-        handleResumeDownload={handleResumeDownload}
-        handleResumeUpload={handleResumeUpload}
-        resumeFile={resumeFile}
-      />
+      <AboutSection handleResumeDownload={handleResumeDownload} />
       
       <ExperienceSection />
       

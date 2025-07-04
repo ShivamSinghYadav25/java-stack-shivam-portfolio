@@ -1,16 +1,14 @@
 
 import React from 'react';
-import { Download, Upload, GraduationCap } from 'lucide-react';
+import { Download, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface AboutSectionProps {
   handleResumeDownload: () => void;
-  handleResumeUpload: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  resumeFile: File | null;
 }
 
-const AboutSection = ({ handleResumeDownload, handleResumeUpload, resumeFile }: AboutSectionProps) => {
+const AboutSection = ({ handleResumeDownload }: AboutSectionProps) => {
   return (
     <section id="about" className="py-24 relative">
       <div className="container mx-auto px-6">
@@ -39,7 +37,7 @@ const AboutSection = ({ handleResumeDownload, handleResumeUpload, resumeFile }: 
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex justify-center">
                 <Button 
                   onClick={handleResumeDownload}
                   className="btn-gradient inline-flex items-center space-x-3 px-8 py-4 rounded-full text-lg font-semibold"
@@ -47,31 +45,7 @@ const AboutSection = ({ handleResumeDownload, handleResumeUpload, resumeFile }: 
                   <Download size={20} />
                   <span>Download Resume</span>
                 </Button>
-                
-                <div className="relative">
-                  <input
-                    type="file"
-                    accept=".pdf"
-                    onChange={handleResumeUpload}
-                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                    id="resume-upload"
-                  />
-                  <Button 
-                    variant="outline" 
-                    className="inline-flex items-center space-x-3 px-8 py-4 rounded-full text-lg border-2 border-teal-400/50 text-teal-300 hover:border-teal-400 hover:bg-teal-400/10 backdrop-blur-sm w-full"
-                  >
-                    <Upload size={20} />
-                    <span>{resumeFile ? 'Change Resume' : 'Upload Resume'}</span>
-                  </Button>
-                </div>
               </div>
-
-              {resumeFile && (
-                <div className="flex items-center gap-3 p-4 bg-green-500/10 border border-green-500/20 rounded-xl backdrop-blur-sm">
-                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-green-300 font-medium">Resume uploaded: {resumeFile.name}</span>
-                </div>
-              )}
             </div>
 
             <div className="animate-slide-right">
