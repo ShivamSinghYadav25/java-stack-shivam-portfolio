@@ -36,10 +36,20 @@ const ContactSection = ({ formData, isSubmitting, handleSubmit, handleInputChang
               </div>
             </div>
             <div className="flex space-x-4 mt-8">
-              <Button variant="outline" size="icon" className="rounded-full border-primary/30 hover:border-primary">
+              <Button 
+                variant="outline" 
+                size="icon" 
+                className="rounded-full border-primary/30 hover:border-primary"
+                onClick={() => window.open('https://github.com/ShivamSinghYadav25', '_blank')}
+              >
                 <Github size={20} />
               </Button>
-              <Button variant="outline" size="icon" className="rounded-full border-primary/30 hover:border-primary">
+              <Button 
+                variant="outline" 
+                size="icon" 
+                className="rounded-full border-primary/30 hover:border-primary"
+                onClick={() => window.open('https://www.linkedin.com/in/shivam-singh-yadav-9b09b631b', '_blank')}
+              >
                 <Linkedin size={20} />
               </Button>
               <Button variant="outline" size="icon" className="rounded-full border-primary/30 hover:border-primary">
