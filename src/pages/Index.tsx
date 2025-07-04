@@ -108,7 +108,7 @@ const Index = () => {
 
     try {
       const result = await emailjs.send(
-        'service_ubhz4h',
+        'service_ubhz4hn',
         'template_8w1hfsn',
         {
           from_name: formData.name,
