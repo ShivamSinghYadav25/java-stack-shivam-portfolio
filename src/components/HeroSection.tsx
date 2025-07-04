@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 
@@ -10,7 +9,7 @@ interface HeroSectionProps {
 const HeroSection = ({ typedText, scrollToSection }: HeroSectionProps) => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="animate-fade-in">
           <div className="w-56 h-56 mx-auto mb-12 rounded-full overflow-hidden border-4 border-teal-400/30 animate-float relative">

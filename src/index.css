@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,32 +6,32 @@
 /* Modern teal-blue gradient theme */
 @layer base {
   :root {
-    --background: 15 23 42;
+    --background: 0 0 0;
     --foreground: 241 245 249;
 
-    --card: 30 41 59;
+    --card: 17 24 39;
     --card-foreground: 241 245 249;
 
-    --popover: 30 41 59;
+    --popover: 17 24 39;
     --popover-foreground: 241 245 249;
 
     --primary: 20 184 166;
-    --primary-foreground: 15 23 42;
+    --primary-foreground: 0 0 0;
 
-    --secondary: 51 65 85;
+    --secondary: 31 41 55;
     --secondary-foreground: 241 245 249;
 
-    --muted: 51 65 85;
+    --muted: 31 41 55;
     --muted-foreground: 148 163 184;
 
     --accent: 6 182 212;
-    --accent-foreground: 15 23 42;
+    --accent-foreground: 0 0 0;
 
     --destructive: 220 38 38;
     --destructive-foreground: 248 250 252;
 
-    --border: 51 65 85;
-    --input: 51 65 85;
+    --border: 31 41 55;
+    --input: 31 41 55;
     --ring: 20 184 166;
 
     --radius: 1rem;
@@ -43,8 +44,8 @@
   }
 
   body {
-    @apply bg-slate-900 text-slate-100 font-inter;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    @apply bg-black text-slate-100 font-inter;
+    background: linear-gradient(135deg, #000000 0%, #111827 50%, #000000 100%);
     min-height: 100vh;
   }
 
@@ -70,21 +71,21 @@
   }
   
   .card-modern {
-    @apply bg-slate-800/80 border border-slate-700/50 backdrop-blur-xl rounded-2xl;
-    background: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(51, 65, 85, 0.6));
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    @apply bg-gray-900/80 border border-gray-700/50 backdrop-blur-xl rounded-2xl;
+    background: linear-gradient(145deg, rgba(17, 24, 39, 0.8), rgba(31, 41, 55, 0.6));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
   }
   
   .card-modern:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
     border-color: rgba(20, 184, 166, 0.5);
   }
   
   .glass-effect {
     @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   }
   
   .floating-animation {
