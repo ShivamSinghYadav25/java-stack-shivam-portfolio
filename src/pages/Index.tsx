@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Download, ExternalLink, User, Code, Briefcase, Award, FolderOpen, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -6,7 +5,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/hooks/use-toast';
-
 const Index = () => {
   const [currentSection, setCurrentSection] = useState('home');
   const [formData, setFormData] = useState({
@@ -20,13 +18,11 @@ const Index = () => {
     const handleScroll = () => {
       const sections = ['home', 'about', 'experience', 'skills', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 100;
-
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const offsetTop = element.offsetTop;
           const offsetHeight = element.offsetHeight;
-          
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
             setCurrentSection(section);
             break;
@@ -34,7 +30,6 @@ const Index = () => {
         }
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -42,7 +37,6 @@ const Index = () => {
   // Typing animation effect
   const [typedText, setTypedText] = useState('');
   const fullText = 'Java Full Stack Developer';
-
   useEffect(() => {
     let index = 0;
     const timer = setInterval(() => {
@@ -53,7 +47,6 @@ const Index = () => {
         clearInterval(timer);
       }
     }, 100);
-
     return () => clearInterval(timer);
   }, []);
 
@@ -62,9 +55,13 @@ const Index = () => {
     e.preventDefault();
     toast({
       title: "Thank you for contacting me!",
-      description: "I'll get back to you as soon as possible.",
+      description: "I'll get back to you as soon as possible."
     });
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({
+      name: '',
+      email: '',
+      message: ''
+    });
   };
 
   // Handle input change
@@ -79,10 +76,11 @@ const Index = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
   const skills = {
     frontend: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
     backend: ['Spring Boot', 'Spring MVC', 'Spring Data JPA', 'Spring Security'],
@@ -90,49 +88,35 @@ const Index = () => {
     testing: ['JUnit', 'Mockito'],
     platforms: ['Eclipse', 'IntelliJ IDEA', 'VS Code']
   };
-
-  const projects = [
-    {
-      title: 'Bus Ticket Booking System',
-      description: 'Web-based ticket booking with route search, JWT authentication, and seat selection',
-      technologies: ['Spring Boot', 'HTML/CSS', 'JavaScript', 'Thymeleaf', 'MySQL'],
-      icon: '🚌'
-    },
-    {
-      title: 'Patient Medicine Appointment System',
-      description: 'Appointment scheduling and CRUD operations with vendors',
-      technologies: ['Spring Boot', 'HTML/CSS', 'JavaScript', 'MySQL'],
-      icon: '🏥'
-    },
-    {
-      title: 'Employee Management System',
-      description: 'Add/update/delete/search employees via secure backend',
-      technologies: ['Spring Boot', 'Bootstrap', 'HTML/CSS'],
-      icon: '👥'
-    },
-    {
-      title: 'Autonomous Vehicle (Submarine) Model',
-      description: '3D modeling and virtual prototyping using Blender. Collaboration on engineering simulations and visual presentations',
-      technologies: ['Blender Platform'],
-      icon: '🚢'
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background text-foreground">
+  const projects = [{
+    title: 'Bus Ticket Booking System',
+    description: 'Web-based ticket booking with route search, JWT authentication, and seat selection',
+    technologies: ['Spring Boot', 'HTML/CSS', 'JavaScript', 'Thymeleaf', 'MySQL'],
+    icon: '🚌'
+  }, {
+    title: 'Patient Medicine Appointment System',
+    description: 'Appointment scheduling and CRUD operations with vendors',
+    technologies: ['Spring Boot', 'HTML/CSS', 'JavaScript', 'MySQL'],
+    icon: '🏥'
+  }, {
+    title: 'Employee Management System',
+    description: 'Add/update/delete/search employees via secure backend',
+    technologies: ['Spring Boot', 'Bootstrap', 'HTML/CSS'],
+    icon: '👥'
+  }, {
+    title: 'Autonomous Vehicle (Submarine) Model',
+    description: '3D modeling and virtual prototyping using Blender. Collaboration on engineering simulations and visual presentations',
+    technologies: ['Blender Platform'],
+    icon: '🚢'
+  }];
+  return <div className="min-h-screen bg-background text-foreground">
       {/* Animated Particles Background */}
       <div className="particles">
-        {[...Array(50)].map((_, i) => (
-          <div
-            key={i}
-            className="particle"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 6}s`,
-            }}
-          />
-        ))}
+        {[...Array(50)].map((_, i) => <div key={i} className="particle" style={{
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        animationDelay: `${Math.random() * 6}s`
+      }} />)}
       </div>
 
       {/* Navigation */}
@@ -141,25 +125,38 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="text-xl font-bold text-gradient">Shivam Singh Yadav</div>
             <div className="hidden md:flex space-x-8">
-              {[
-                { id: 'home', label: 'Home', icon: User },
-                { id: 'about', label: 'About', icon: User },
-                { id: 'experience', label: 'Experience', icon: Briefcase },
-                { id: 'skills', label: 'Skills', icon: Code },
-                { id: 'projects', label: 'Projects', icon: FolderOpen },
-                { id: 'contact', label: 'Contact', icon: MessageCircle }
-              ].map(({ id, label, icon: Icon }) => (
-                <button
-                  key={id}
-                  onClick={() => scrollToSection(id)}
-                  className={`flex items-center space-x-1 px-3 py-2 rounded-lg transition-colors duration-300 ${
-                    currentSection === id ? 'text-primary bg-primary/10' : 'text-muted-foreground hover:text-primary'
-                  }`}
-                >
+              {[{
+              id: 'home',
+              label: 'Home',
+              icon: User
+            }, {
+              id: 'about',
+              label: 'About',
+              icon: User
+            }, {
+              id: 'experience',
+              label: 'Experience',
+              icon: Briefcase
+            }, {
+              id: 'skills',
+              label: 'Skills',
+              icon: Code
+            }, {
+              id: 'projects',
+              label: 'Projects',
+              icon: FolderOpen
+            }, {
+              id: 'contact',
+              label: 'Contact',
+              icon: MessageCircle
+            }].map(({
+              id,
+              label,
+              icon: Icon
+            }) => <button key={id} onClick={() => scrollToSection(id)} className={`flex items-center space-x-1 px-3 py-2 rounded-lg transition-colors duration-300 ${currentSection === id ? 'text-primary bg-primary/10' : 'text-muted-foreground hover:text-primary'}`}>
                   <Icon size={16} />
                   <span>{label}</span>
-                </button>
-              ))}
+                </button>)}
             </div>
           </div>
         </div>
@@ -170,31 +167,20 @@ const Index = () => {
         <div className="container mx-auto px-6 text-center">
           <div className="animate-fade-in">
             <div className="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-4 border-primary/30 animate-float">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
-                alt="Shivam Singh Yadav"
-                className="w-full h-full object-cover"
-              />
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Shivam Singh Yadav" className="w-full h-full object-cover" />
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Hi, I'm <span className="text-gradient">Shivam</span>
+              Hi, I'm <span className="text-gradient text-5xl">Shivam Singh Yadav</span>
             </h1>
             <div className="text-2xl md:text-3xl mb-8 h-12">
               <span className="text-muted-foreground">{typedText}</span>
               <span className="animate-blink">|</span>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                onClick={() => scrollToSection('projects')}
-                className="btn-gradient text-lg px-8 py-6 rounded-full"
-              >
+              <Button onClick={() => scrollToSection('projects')} className="btn-gradient text-lg px-8 py-6 rounded-full">
                 View My Work
               </Button>
-              <Button
-                onClick={() => scrollToSection('contact')}
-                variant="outline"
-                className="text-lg px-8 py-6 rounded-full border-primary/30 hover:border-primary"
-              >
+              <Button onClick={() => scrollToSection('contact')} variant="outline" className="text-lg px-8 py-6 rounded-full border-primary/30 hover:border-primary">
                 Get In Touch
               </Button>
             </div>
@@ -282,8 +268,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 text-gradient">Skills</h2>
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Object.entries(skills).map(([category, skillList], index) => (
-              <Card key={category} className="bg-card border-border card-hover">
+            {Object.entries(skills).map(([category, skillList], index) => <Card key={category} className="bg-card border-border card-hover">
                 <CardHeader>
                   <CardTitle className="text-primary capitalize">
                     {category === 'platforms' ? 'Platforms/IDEs' : category}
@@ -291,18 +276,12 @@ const Index = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {skillList.map((skill) => (
-                      <span
-                        key={skill}
-                        className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm border border-primary/20"
-                      >
+                    {skillList.map(skill => <span key={skill} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm border border-primary/20">
                         {skill}
-                      </span>
-                    ))}
+                      </span>)}
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -312,8 +291,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 text-gradient">Projects</h2>
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <Card key={project.title} className="bg-card border-border card-hover">
+            {projects.map((project, index) => <Card key={project.title} className="bg-card border-border card-hover">
                 <CardHeader>
                   <div className="flex items-center space-x-3">
                     <span className="text-3xl">{project.icon}</span>
@@ -325,18 +303,12 @@ const Index = () => {
                     {project.description}
                   </CardDescription>
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 bg-primary/10 text-primary rounded text-xs border border-primary/20"
-                      >
+                    {project.technologies.map(tech => <span key={tech} className="px-2 py-1 bg-primary/10 text-primary rounded text-xs border border-primary/20">
                         {tech}
-                      </span>
-                    ))}
+                      </span>)}
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -375,35 +347,13 @@ const Index = () => {
                 <CardContent className="p-6">
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                      <Input
-                        name="name"
-                        placeholder="Your Name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className="bg-transparent border-b-2 border-t-0 border-l-0 border-r-0 border-muted focus:border-primary rounded-none px-0"
-                        required
-                      />
+                      <Input name="name" placeholder="Your Name" value={formData.name} onChange={handleInputChange} className="bg-transparent border-b-2 border-t-0 border-l-0 border-r-0 border-muted focus:border-primary rounded-none px-0" required />
                     </div>
                     <div>
-                      <Input
-                        name="email"
-                        type="email"
-                        placeholder="Your Email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="bg-transparent border-b-2 border-t-0 border-l-0 border-r-0 border-muted focus:border-primary rounded-none px-0"
-                        required
-                      />
+                      <Input name="email" type="email" placeholder="Your Email" value={formData.email} onChange={handleInputChange} className="bg-transparent border-b-2 border-t-0 border-l-0 border-r-0 border-muted focus:border-primary rounded-none px-0" required />
                     </div>
                     <div>
-                      <Textarea
-                        name="message"
-                        placeholder="Your Message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        className="bg-transparent border-2 border-muted focus:border-primary min-h-32"
-                        required
-                      />
+                      <Textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleInputChange} className="bg-transparent border-2 border-muted focus:border-primary min-h-32" required />
                     </div>
                     <Button type="submit" className="btn-gradient w-full py-3 rounded-full">
                       Send Message
@@ -433,8 +383,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
