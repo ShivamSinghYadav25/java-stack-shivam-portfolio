@@ -65,10 +65,10 @@ const Index = () => {
   // Handle resume download with direct path
   const handleResumeDownload = () => {
     // Updated with your actual resume path
-    const resumePath = '/resume-SHIVAM.pdf;
+    const resumePath = '/resume_SHIVAM.pdf;
     const link = document.createElement('a');
     link.href = resumePath;
-    link.download = 'Shivam_Singh_Yadav_Resume.pdf';
+    link.download = 'Shivam Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
