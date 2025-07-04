@@ -56,33 +56,6 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				},
-				purple: {
-					400: '#a855f7',
-					500: '#9333ea',
-					600: '#7c3aed',
-					700: '#6d28d9',
-				},
-				violet: {
-					400: '#a78bfa',
-					500: '#8b5cf6',
-					600: '#7c3aed',
-					700: '#6d28d9',
-				},
-				indigo: {
-					400: '#818cf8',
-					500: '#6366f1',
-					600: '#4f46e5',
-				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -109,7 +82,7 @@ export default {
 				'fade-in': {
 					'0%': {
 						opacity: '0',
-						transform: 'translateY(20px)'
+						transform: 'translateY(30px)'
 					},
 					'100%': {
 						opacity: '1',
@@ -119,7 +92,7 @@ export default {
 				'slide-in-left': {
 					'0%': {
 						opacity: '0',
-						transform: 'translateX(-20px)'
+						transform: 'translateX(-50px)'
 					},
 					'100%': {
 						opacity: '1',
@@ -129,7 +102,7 @@ export default {
 				'slide-in-right': {
 					'0%': {
 						opacity: '0',
-						transform: 'translateX(20px)'
+						transform: 'translateX(50px)'
 					},
 					'100%': {
 						opacity: '1',
@@ -141,7 +114,7 @@ export default {
 						transform: 'translateY(0px)'
 					},
 					'50%': {
-						transform: 'translateY(-10px)'
+						transform: 'translateY(-20px)'
 					}
 				},
 				'typing': {
@@ -160,25 +133,25 @@ export default {
 						opacity: '0'
 					}
 				},
-				'pulse-glow': {
+				'bounce-gentle': {
 					'0%, 100%': {
-						boxShadow: '0 0 5px rgba(147, 51, 234, 0.5)'
+						transform: 'translateY(0)'
 					},
 					'50%': {
-						boxShadow: '0 0 20px rgba(147, 51, 234, 0.8)'
+						transform: 'translateY(-10px)'
 					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.6s ease-out',
-				'slide-in-left': 'slide-in-left 0.6s ease-out',
-				'slide-in-right': 'slide-in-right 0.6s ease-out',
-				'float': 'float 3s ease-in-out infinite',
+				'fade-in': 'fade-in 0.8s ease-out',
+				'slide-in-left': 'slide-in-left 0.8s ease-out',
+				'slide-in-right': 'slide-in-right 0.8s ease-out',
+				'float': 'float 6s ease-in-out infinite',
 				'typing': 'typing 3.5s steps(30, end), blink 0.75s step-end infinite',
 				'blink': 'blink 0.75s step-end infinite',
-				'pulse-glow': 'pulse-glow 2s ease-in-out infinite'
+				'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite'
 			}
 		}
 	},
