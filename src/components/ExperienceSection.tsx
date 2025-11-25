@@ -23,13 +23,13 @@ const ExperienceSection = () => {
                     <Briefcase className="text-white" size={24} />
                   </div>
                   <div>
-                    <CardTitle className="text-2xl font-bold text-teal-300 mb-2">Java Stack Developer Intern</CardTitle>
+                    <CardTitle className="text-2xl font-bold text-teal-300 mb-2">Java Full Stack Developer Intern</CardTitle>
                     <CardDescription className="text-xl text-slate-300 font-medium">GUVI Geek Technology</CardDescription>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 bg-teal-500/20 text-teal-300 rounded-full border border-teal-500/30">
                   <Calendar size={16} />
-                  <span className="font-medium">December 2024 – June 2025</span>
+                  <span className="font-medium">December 2024 – February 2025</span>
                 </div>
               </div>
             </CardHeader>
@@ -43,7 +43,9 @@ const ExperienceSection = () => {
                   <span className="skill-tag text-xs">Spring Boot</span>
                   <span className="skill-tag text-xs">REST APIs</span>
                   <span className="skill-tag text-xs">Frontend Integration</span>
-                  <span className="skill-tag text-xs">Enterprise Development</span>
+                  <span className="skill-tag text-xs">Spring MVC</span>
+                  <span className="skill-tag text-xs">Spring Data JPA</span>
+                  <span className="skill-tag text-xs">Spring Security</span>
                 </div>
               </div>
             </CardContent>

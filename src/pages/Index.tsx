@@ -139,9 +139,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Scan Line Effect */}
-      <div className="scan-line" />
-      
       {/* Animated Particles Background */}
       <div className="particles">
         {[...Array(50)].map((_, i) => (

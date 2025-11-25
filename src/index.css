@@ -397,15 +397,6 @@
   }
 }
 
-@keyframes scan {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100vh);
-  }
-}
-
 .animate-slide-up {
   animation: slideInUp 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -424,22 +415,6 @@
 
 .animate-pulse-neon {
   animation: pulse-neon 2s ease-in-out infinite;
-}
-
-.scan-line {
-  position: fixed;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(0, 255, 255, 0.8),
-    transparent
-  );
-  animation: scan 8s linear infinite;
-  pointer-events: none;
-  z-index: 9999;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
 }
 
 /* Neon scrollbar */

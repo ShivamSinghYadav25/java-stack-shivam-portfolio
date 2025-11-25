@@ -1,7 +1,6 @@
 
 import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Github, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -9,15 +8,32 @@ const Footer = () => {
       <div className="container mx-auto px-6 text-center">
         <p className="text-muted-foreground mb-4">© 2025 Shivam Singh Yadav</p>
         <div className="flex justify-center space-x-4">
-          <Button variant="ghost" size="icon" className="hover:text-primary">
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              console.log('GitHub clicked');
+              window.open('https://github.com/ShivamSinghYadav25', '_blank', 'noopener,noreferrer');
+            }}
+            className="p-2 hover:text-teal-400 transition-colors cursor-pointer bg-transparent border-0"
+            aria-label="GitHub Profile"
+          >
             <Github size={20} />
-          </Button>
-          <Button variant="ghost" size="icon" className="hover:text-primary">
+          </button>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              console.log('LinkedIn clicked');
+              window.open('http://www.linkedin.com/in/shivam-singh-yadav-9b09b631b', '_blank', 'noopener,noreferrer');
+            }}
+            className="p-2 hover:text-teal-400 transition-colors cursor-pointer bg-transparent border-0"
+            aria-label="LinkedIn Profile"
+          >
             <Linkedin size={20} />
-          </Button>
-          <Button variant="ghost" size="icon" className="hover:text-primary">
-            <Mail size={20} />
-          </Button>
+          </button>
         </div>
       </div>
     </footer>
