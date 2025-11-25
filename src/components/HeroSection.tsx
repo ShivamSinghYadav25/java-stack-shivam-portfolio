@@ -8,15 +8,18 @@ interface HeroSectionProps {
 
 const HeroSection = ({ typedText, scrollToSection }: HeroSectionProps) => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="animate-fade-in">
-          <div className="w-56 h-56 mx-auto mb-12 rounded-full overflow-hidden border-4 border-teal-400/30 animate-float relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-teal-400/20 to-blue-400/20 rounded-full animate-glow"></div>
+          <div className="w-64 h-64 mx-auto mb-12 rounded-full overflow-hidden border-4 border-neon-cyan animate-float relative">
+            <div className="absolute inset-[-4px] rounded-full animate-pulse-glow" style={{
+              boxShadow: '0 0 20px rgba(0, 255, 255, 0.6), 0 0 40px rgba(0, 255, 255, 0.4)',
+              zIndex: -1
+            }}></div>
             <img 
               alt="Shivam Singh Yadav" 
-              className="w-full h-full object-cover relative z-10" 
+              className="w-full h-full object-cover brightness-110 contrast-110" 
               src="/lovable-uploads/e187ba3c-fbc3-47f6-9c29-b3c1a84053fc.jpg" 
             />
           </div>
