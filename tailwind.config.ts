@@ -55,12 +55,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Light accent colors
-				'light': {
-					50: '#f0f9ff',
-					100: '#e0f2fe',
-					200: '#bae6fd',
-					300: '#7dd3fc',
+				neon: {
+					cyan: 'hsl(var(--neon-cyan))',
+					magenta: 'hsl(var(--neon-magenta))',
+					blue: 'hsl(var(--neon-blue))',
+					green: 'hsl(var(--neon-green))',
 				}
 			},
 			borderRadius: {
@@ -146,6 +145,24 @@ export default {
 					'50%': {
 						transform: 'translateY(-10px)'
 					}
+				},
+				'pulse-glow': {
+					'0%, 100%': {
+						opacity: '1',
+						boxShadow: '0 0 20px rgba(0, 255, 255, 0.4)'
+					},
+					'50%': {
+						opacity: '0.8',
+						boxShadow: '0 0 40px rgba(0, 255, 255, 0.8), 0 0 80px rgba(138, 43, 226, 0.4)'
+					}
+				},
+				'neon-flicker': {
+					'0%, 100%': { opacity: '1' },
+					'41%': { opacity: '1' },
+					'42%': { opacity: '0.8' },
+					'43%': { opacity: '1' },
+					'45%': { opacity: '0.9' },
+					'46%': { opacity: '1' }
 				}
 			},
 			animation: {
@@ -157,7 +174,9 @@ export default {
 				'float': 'float 6s ease-in-out infinite',
 				'typing': 'typing 3.5s steps(30, end), blink 0.75s step-end infinite',
 				'blink': 'blink 0.75s step-end infinite',
-				'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite'
+				'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'neon-flicker': 'neon-flicker 8s infinite'
 			}
 		}
 	},
